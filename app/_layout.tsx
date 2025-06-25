@@ -2,6 +2,7 @@ import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 
+import TopBar from '@/components/top-bar';
 import "../global.css";
 
 export default function RootLayout() {
@@ -15,6 +16,7 @@ export default function RootLayout() {
 
   return (
     <>
+      <TopBar />
       <Stack screenOptions={{ headerShown: false }} />
       <StatusBar style="auto" />
     </>

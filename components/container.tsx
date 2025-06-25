@@ -7,7 +7,7 @@ interface ContainerProps {
 
 export default function ({ children }: ContainerProps) {
   return (
-    <View className="flex-1 px-1 bg-white dark:bg-black">
+    <View className="flex-1 mt-3 px-1 bg-white dark:bg-black">
       {children}
     </View>
   );
