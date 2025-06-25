@@ -1,11 +1,12 @@
-import { Text, View } from 'react-native';
+import Container from '@/components/container';
+import { Text } from 'react-native';
 
 export default function HomeScreen() {
   return (
-    <View className="flex-1 items-center justify-center bg-white dark:bg-black">
+    <Container>
       <Text className="text-xl font-bold text-black dark:text-white">
         Bem-vindo ao app com NativeWind!
       </Text>
-    </View>
+    </Container>
   );
 }
