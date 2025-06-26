@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { View } from "react-native";
+import { ScrollView } from "react-native";
 
 interface ContainerProps {
   children: ReactNode;
@@ -7,8 +7,8 @@ interface ContainerProps {
 
 export default function ({ children }: ContainerProps) {
   return (
-    <View className="flex-1 mt-3 px-1.5 bg-white dark:bg-black">
+    <ScrollView  className="flex-1 mt-3 px-1.5 bg-white dark:bg-black mb-3">
       {children}
-    </View>
+    </ScrollView>
   );
 }
