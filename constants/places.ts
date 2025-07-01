@@ -9,11 +9,11 @@ export const places = [
     street: "Rua Teste",
     additional: "teste",
     businessHours: "08:00 - 19:00",
-    type: "restaurante",
+    tipo: "restaurante",
   },
   {
     id: 3,
-    name: "Outback Plaza Shopping Itu",
+    name: "Outback Plaza Shopping Itu 2",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     city: "Itu",
@@ -21,7 +21,7 @@ export const places = [
     street: "Rua Teste",
     additional: "teste",
     businessHours: "08:00 - 19:00",
-    type: "restaurante",
+    tipo: "restaurante",
   },
   {
     id: 2,
@@ -33,6 +33,6 @@ export const places = [
     street: "Rua Exemplo",
     additional: "algo adicional",
     businessHours: "09:00 - 18:00",
-    type: "diversao",
+    tipo: "diversao",
   },
 ];

@@ -3,16 +3,22 @@ import { places } from "@/constants/places";
 import { useRouter } from "expo-router";
 import { ScrollView, TouchableOpacity, View } from "react-native";
 
-export default function Carousel() {
+interface CarouselProps {
+  type: string;
+  excludeId?: number; 
+}
+
+export default function Carousel({ type, excludeId }: CarouselProps) {
   const router = useRouter();
+
+  const filteredPlaces = places.filter(
+    (place) => place.tipo === type && place.id !== excludeId
+  );
 
   return (
     <View className="mt-4">
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-      >
-        {places.map((place) => (
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        {filteredPlaces.map((place) => (
           <TouchableOpacity
             key={place.id}
             onPress={() => router.push(`/extra/${place.id}`)}

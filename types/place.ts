@@ -7,4 +7,5 @@ export interface Place {
   street: string;
   additional: string;
   businessHours: string;
+  tipo: string;
 }

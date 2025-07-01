@@ -134,6 +134,7 @@ export default function Screen() {
                   {place.city}, {place.state}
                 </Text>
                 <Text className="text-gray-700">{place.street}</Text>
+                
               </View>
             )}
           </Pressable>
@@ -144,7 +145,7 @@ export default function Screen() {
         <View className="pb-8">
           <Text className="text-2xl font-bold ">Itens Relacionados</Text>
           <View className="flex flex-row gap-3">
-           <Carousel />
+           <Carousel type={place.tipo} excludeId={place.id} />
           </View>
         </View>
       </View>
