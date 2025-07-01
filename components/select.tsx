@@ -49,7 +49,8 @@ const styles = StyleSheet.create({
     borderColor: "#E1E1E1",
     borderWidth: 1,
     borderRadius: 6,
-    height: 40,
+    height: 38,
+    width: 200,
     justifyContent: "center",
   },
   picker: {

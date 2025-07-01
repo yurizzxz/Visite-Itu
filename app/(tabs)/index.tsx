@@ -23,15 +23,17 @@ export default function HomeScreen() {
           selectedValue={categoria}
         />
 
-        {places.map((place) => (
-          <TouchableOpacity
-            key={place.id}
-            onPress={() => router.push(`/extra/${place.id}`)}
-            className="flex flex-col gap-3"
-          >
-            <PlaceCard place={place} />
-          </TouchableOpacity>
-        ))}
+        <View className="mt-3 flex flex-col gap-4">
+          {places.map((place) => (
+            <TouchableOpacity
+              key={place.id}
+              onPress={() => router.push(`/extra/${place.id}`)}
+              className="flex flex-col gap-3"
+            >
+              <PlaceCard place={place} />
+            </TouchableOpacity>
+          ))}
+        </View>
       </View>
     </Container>
   );
