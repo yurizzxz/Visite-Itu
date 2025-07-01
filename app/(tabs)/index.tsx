@@ -23,7 +23,7 @@ export default function HomeScreen() {
           selectedValue={categoria}
         />
 
-        <View className="mt-3 flex flex-col gap-4">
+        <View className="mt-3 flex flex-col gap-4" style={{ paddingBottom: 60 }}>
           {places.map((place) => (
             <TouchableOpacity
               key={place.id}

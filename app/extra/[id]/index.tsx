@@ -1,4 +1,4 @@
-import PlaceCard from "@/components/place-card";
+import Carousel from "@/components/carousel";
 import { places } from "@/constants/places";
 import { Place } from "@/types/place";
 import Entypo from "@expo/vector-icons/Entypo";
@@ -12,9 +12,8 @@ import {
   Pressable,
   ScrollView,
   Text,
-  TouchableOpacity,
   UIManager,
-  View,
+  View
 } from "react-native";
 
 export default function Screen() {
@@ -143,17 +142,9 @@ export default function Screen() {
         <View className="py-5" />
 
         <View className="pb-8">
-          <Text className="text-2xl font-bold mb-3">Itens Relacionados</Text>
+          <Text className="text-2xl font-bold ">Itens Relacionados</Text>
           <View className="flex flex-row gap-3">
-            {places.map((p) => (
-              <TouchableOpacity
-                key={p.id}
-                onPress={() => router.push(`/extra/${p.id}`)}
-                className="flex flex-col gap-3"
-              >
-                <PlaceCard className="w-[12.3rem]" place={p} />
-              </TouchableOpacity>
-            ))}
+           <Carousel />
           </View>
         </View>
       </View>

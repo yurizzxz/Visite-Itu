@@ -10,7 +10,7 @@ export default function ({ children }: ContainerProps) {
   const statusBarHeight = Constants.statusBarHeight;
   return (
     <ScrollView
-      className="flex-1 mt-3 px-4 bg-white pb-3"
+      className="flex-1 mt-3 px-4 bg-white"
       style={{ paddingTop: statusBarHeight }}
     >
       {children}
