@@ -2,7 +2,7 @@ import Entypo from "@expo/vector-icons/Entypo";
 import { useRouter } from "expo-router";
 import { Image, Pressable, View } from "react-native";
 
-export default function TopBar() {
+export default function TopBar({ showBack = false }) {
   const router = useRouter();
 
   const goToHome = () => {
@@ -13,11 +13,22 @@ export default function TopBar() {
     router.push("./extra/favorite-places");
   };
 
+  const goBack = () => {
+    router.back();
+  };
+
   return (
     <View className="flex py-4 px-1.5 flex-row  justify-between">
-      <Pressable>
-        <Entypo name="heart-outlined" size={28} color="black" />
-      </Pressable>
+      {showBack ? (
+        <Pressable onPress={goBack}>
+          <Entypo name="chevron-left" size={28} color="black" />
+        </Pressable>
+      ) : (
+        <Pressable>
+          <Entypo name="heart-outlined" size={28} color="black" />
+        </Pressable>
+      )}
+
       <Pressable onPress={goToHome}>
         <Image
           source={require("@/assets/images/logoAppItuPng.png")}

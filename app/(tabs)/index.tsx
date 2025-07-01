@@ -6,7 +6,7 @@ import { categorias } from "@/constants/categories";
 import { places } from "@/constants/places";
 import { useRouter } from "expo-router";
 import { useState } from "react";
-import { Pressable, View } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 
 export default function HomeScreen() {
   const [categoria, setCategoria] = useState("todos");
@@ -22,11 +22,16 @@ export default function HomeScreen() {
           onValueChange={setCategoria}
           selectedValue={categoria}
         />
-        <Pressable className="flex flex-col gap-3">
-          {places.map((place) => (
-            <PlaceCard key={place.id} place={place} />
-          ))}
-        </Pressable>
+
+        {places.map((place) => (
+          <TouchableOpacity
+            key={place.id}
+            onPress={() => router.push(`/extra/${place.id}`)}
+            className="flex flex-col gap-3"
+          >
+            <PlaceCard place={place} />
+          </TouchableOpacity>
+        ))}
       </View>
     </Container>
   );
