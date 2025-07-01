@@ -142,7 +142,7 @@ export default function Screen() {
 
         <View className="py-5" />
 
-        <View>
+        <View className="pb-8">
           <Text className="text-2xl font-bold mb-3">Itens Relacionados</Text>
           <View className="flex flex-row gap-3">
             {places.map((p) => (
@@ -151,7 +151,7 @@ export default function Screen() {
                 onPress={() => router.push(`/extra/${p.id}`)}
                 className="flex flex-col gap-3"
               >
-                <PlaceCard place={p} />
+                <PlaceCard className="w-[12.3rem]" place={p} />
               </TouchableOpacity>
             ))}
           </View>
