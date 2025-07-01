@@ -1,6 +1,6 @@
 import { Picker } from "@react-native-picker/picker";
 import { useState } from "react";
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 interface SelectItem {
   label: string;
@@ -28,11 +28,12 @@ export default function Select({
   };
 
   return (
-    <View style={{ height: 50 }}>
+    <View style={styles.wrapper}>
       <Picker
         selectedValue={selectedValue ?? internalValue}
         onValueChange={handleChange}
         mode="dropdown"
+        style={styles.picker}
       >
         {items.map((item) => (
           <Picker.Item key={item.value} label={item.label} value={item.value} />
@@ -41,3 +42,17 @@ export default function Select({
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  wrapper: {
+    backgroundColor: "#F4F3F3",
+    borderColor: "#E1E1E1",
+    borderWidth: 1,
+    borderRadius: 6,
+    height: 40,
+    justifyContent: "center",
+  },
+  picker: {
+    color: "#000",
+  },
+});

@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "visite-itu",
+    "name": "Visite Itu",
     "slug": "visite-itu",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/logoAppItu.jpg",
     "scheme": "visiteitu",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,9 +13,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
+        "foregroundImage": "./assets/images/logoAppItu.jpg"      },
       "edgeToEdgeEnabled": true
     },
     "web": {
@@ -28,10 +26,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "image": "./assets/images/logoAppItu.jpg"
         }
       ]
     ],

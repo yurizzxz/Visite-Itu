@@ -1,4 +1,3 @@
-import TopBar from '@/components/top-bar';
 import { useFonts } from 'expo-font';
 import { Slot } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
@@ -13,9 +12,9 @@ export default function RootLayout() {
 
   return (
     <>
-      <TopBar />
+
       <Slot /> 
-      <StatusBar style="auto" />
+      <StatusBar style="light" translucent />
     </>
   );
 }

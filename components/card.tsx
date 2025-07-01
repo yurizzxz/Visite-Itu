@@ -12,16 +12,16 @@ export function Card({ children }: CardProps) {
 
 export function CardContent({ children }: any) {
     return (
-        <View className="px-3.5 py-2.5">{children}</View>
+        <View className="px-3.5 py-3.5">{children}</View>
     )
 }
 export function CardTitle({ children }: any) {
     return (
-        <Text className="text-md font-semibold">{children}</Text>
+        <Text className="text-xl font-semibold">{children}</Text>
     )
 }
 export function CardDescription({ children }: any) {
     return (
-        <Text className="text-xs mt-1">{children}</Text>
+        <Text className="text-md text-zinc-500 ">{children}</Text>
     )
 }
