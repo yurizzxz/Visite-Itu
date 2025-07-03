@@ -1,6 +1,7 @@
 import Carousel from "@/components/carousel";
 import { places } from "@/constants/places";
 import { Place } from "@/types/place";
+import { isFavorite, removeFavorite, saveFavorite } from "@/utils/storage";
 import Entypo from "@expo/vector-icons/Entypo";
 import Constants from "expo-constants";
 import { useLocalSearchParams, useRouter } from "expo-router";
@@ -13,17 +14,18 @@ import {
   ScrollView,
   Text,
   UIManager,
-  View
+  View,
 } from "react-native";
 
 export default function Screen() {
   const { id } = useLocalSearchParams<{ id: string }>();
+  const [isSaved, setIsSaved] = useState(false);
   const router = useRouter();
   const statusBarHeight = Constants.statusBarHeight;
 
   const place: Place | undefined = places.find((p) => p.id === Number(id));
 
-  const [expandedId, setExpandedId] = useState<string | null>("description"); 
+  const [expandedId, setExpandedId] = useState<string | null>("description");
 
   useEffect(() => {
     if (
@@ -36,7 +38,7 @@ export default function Screen() {
 
   const toggleAccordion = (key: string) => {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
-    setExpandedId((current) => (current === key ? null : key)); 
+    setExpandedId((current) => (current === key ? null : key));
   };
 
   if (!place) {
@@ -47,6 +49,22 @@ export default function Screen() {
     );
   }
 
+  useEffect(() => {
+    if (place) {
+      isFavorite(place.id).then(setIsSaved);
+    }
+  }, [place]);
+
+  const handleToggleFavorite = async () => {
+    if (!place) return;
+    if (isSaved) {
+      await removeFavorite(place.id);
+    } else {
+      await saveFavorite(place);
+    }
+    setIsSaved(!isSaved);
+  };
+
   return (
     <ScrollView>
       <View>
@@ -54,7 +72,7 @@ export default function Screen() {
           className="flex-row absolute z-10  items-center gap-3 px-3"
           style={{ marginTop: statusBarHeight + 22 }}
         >
-          <Pressable onPress={() => router.back()}>
+          <Pressable onPress={() => router.push("/")}>
             <Entypo name="chevron-left" size={28} color="black" />
           </Pressable>
         </View>
@@ -68,13 +86,24 @@ export default function Screen() {
 
       <View className="px-4 mt-8">
         <View className="mb-2">
-          <View className="flex flex-row justify-between">
-            <Text className="text-4xl">{place.name}</Text>
-            <Pressable>
-              <Entypo name="heart-outlined" size={28} color="black" />
-            </Pressable>
+          <View className="mb-2">
+            <View className="flex-row justify-between items-start gap-2">
+              <View className="flex-1 pr-2">
+                <Text className="text-4xl">{place.name}</Text>
+              </View>
+              <Pressable onPress={handleToggleFavorite} className="px-1">
+                <Entypo
+                  name={isSaved ? "heart" : "heart-outlined"}
+                  size={28}
+                  color={isSaved ? "red" : "black"}
+                />
+              </Pressable>
+            </View>
+
+            <Text className="text-xl mt-2 text-gray-700">
+              {place.businessHours}
+            </Text>
           </View>
-          <Text className="text-xl mt-2 text-gray-700">{place.businessHours}</Text>
         </View>
 
         <View className="flex mt-4 flex-col gap-2">
@@ -83,16 +112,22 @@ export default function Screen() {
             className="border border-gray-300 rounded p-3 bg-gray-100"
           >
             <View className="flex-row justify-between items-center">
-              <Text className="text-lg font-semibold text-gray-800">Descrição</Text>
+              <Text className="text-lg font-semibold text-gray-800">
+                Descrição
+              </Text>
               <Entypo
-                name={expandedId === "description" ? "chevron-up" : "chevron-down"}
+                name={
+                  expandedId === "description" ? "chevron-up" : "chevron-down"
+                }
                 size={24}
                 color="black"
               />
             </View>
             {expandedId === "description" && (
               <View className="mt-3">
-                <Text className="text-base text-gray-700 mb-1">{place.description}</Text>
+                <Text className="text-base text-gray-700 mb-1">
+                  {place.description}
+                </Text>
               </View>
             )}
           </Pressable>
@@ -102,9 +137,13 @@ export default function Screen() {
             className="border border-gray-300 rounded p-3 bg-gray-100"
           >
             <View className="flex-row justify-between items-center">
-              <Text className="text-lg font-semibold text-gray-800">Adicionais</Text>
+              <Text className="text-lg font-semibold text-gray-800">
+                Adicionais
+              </Text>
               <Entypo
-                name={expandedId === "additional" ? "chevron-up" : "chevron-down"}
+                name={
+                  expandedId === "additional" ? "chevron-up" : "chevron-down"
+                }
                 size={24}
                 color="black"
               />
@@ -121,7 +160,9 @@ export default function Screen() {
             className="border border-gray-300 rounded p-3 bg-gray-100"
           >
             <View className="flex-row justify-between items-center">
-              <Text className="text-lg font-semibold text-gray-800">Localização</Text>
+              <Text className="text-lg font-semibold text-gray-800">
+                Localização
+              </Text>
               <Entypo
                 name={expandedId === "location" ? "chevron-up" : "chevron-down"}
                 size={24}
@@ -134,7 +175,6 @@ export default function Screen() {
                   {place.city}, {place.state}
                 </Text>
                 <Text className="text-gray-700">{place.street}</Text>
-                
               </View>
             )}
           </Pressable>
@@ -143,9 +183,9 @@ export default function Screen() {
         <View className="py-5" />
 
         <View className="pb-8">
-          <Text className="text-2xl font-bold ">Itens Relacionados</Text>
+          <Text className="text-2xl font-bold">Itens Relacionados</Text>
           <View className="flex flex-row gap-3">
-           <Carousel type={place.tipo} excludeId={place.id} />
+            <Carousel type={place.tipo} excludeId={place.id} />
           </View>
         </View>
       </View>
