@@ -1,4 +1,5 @@
 import Carousel from "@/components/carousel";
+import PrimaryButton from "@/components/ui/button";
 import { places } from "@/constants/places";
 import { Place } from "@/types/place";
 import { isFavorite, removeFavorite, saveFavorite } from "@/utils/storage";
@@ -65,16 +66,27 @@ export default function Screen() {
     setIsSaved(!isSaved);
   };
 
+  const goToFavorites = () => {
+    router.push("./favorite-places");
+  };
+
   return (
     <ScrollView>
       <View>
         <View
-          className="flex-row absolute z-10  items-center gap-3 px-3"
-          style={{ marginTop: statusBarHeight + 22 }}
+          className="flex-row w-full justify-between absolute z-10  items-center gap-3 px-4"
+          style={{ marginTop: statusBarHeight + 14 }}
         >
           <Pressable onPress={() => router.push("/")}>
             <Entypo name="chevron-left" size={28} color="black" />
           </Pressable>
+
+          <PrimaryButton onPress={goToFavorites}>
+            <Entypo name="heart" size={17} color="white" />
+            <Text className="text-lg text-white">
+              Ver Favoritos
+            </Text>
+          </PrimaryButton>
         </View>
 
         <Image
@@ -95,7 +107,7 @@ export default function Screen() {
                 <Entypo
                   name={isSaved ? "heart" : "heart-outlined"}
                   size={28}
-                  color={isSaved ? "red" : "black"}
+                  color={isSaved ? "#2563eb" : "black"}
                 />
               </Pressable>
             </View>
