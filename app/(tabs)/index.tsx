@@ -14,16 +14,19 @@ export default function HomeScreen() {
   const router = useRouter();
 
   return (
-    <Container>
-      <View className="flex flex-col gap-4">
-        <TopBar />
+    <Container className="px-0 bg">
+      <TopBar showFavorites />
+      <View className="flex px-4 flex-col gap-4">
         <Select
           items={categorias}
           onValueChange={setCategoria}
           selectedValue={categoria}
         />
 
-        <View className="mt-3 flex flex-col gap-4" style={{ paddingBottom: 60 }}>
+        <View
+          className="mt-3 flex flex-col gap-4"
+          style={{ paddingBottom: 60 }}
+        >
           {places.map((place) => (
             <TouchableOpacity
               key={place.id}
