@@ -47,7 +47,7 @@ export default function HomeScreen() {
                   </PrimaryButton>
                 </View>
 
-                <Carousel type={tipo} />
+                <Carousel limit={4} type={tipo} />
               </View>
             </View>
           ))}

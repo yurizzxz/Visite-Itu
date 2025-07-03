@@ -5,15 +5,16 @@ import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 interface CarouselProps {
   type: string;
+  limit?: number;
   excludeId?: number; 
 }
 
-export default function Carousel({ type, excludeId }: CarouselProps) {
+export default function Carousel({ type, excludeId, limit }: CarouselProps) {
   const router = useRouter();
 
   const filteredPlaces = places.filter(
-    (place) => place.tipo === type && place.id !== excludeId
-  );
+    (place) => place.tipo === type && place.id !== excludeId).slice(0, limit );
+  
 
   return (
     <View className="mt-4">

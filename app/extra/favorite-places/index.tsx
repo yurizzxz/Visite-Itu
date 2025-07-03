@@ -29,7 +29,7 @@ export default function FavoritosScreen() {
             <TouchableOpacity
               key={place.id}
               onPress={() => router.push(`/extra/${place.id}`)}
-              className="flex flex-col gap-3"
+              className=" mb-3"
             >
               <PlaceCard place={place} />
             </TouchableOpacity>

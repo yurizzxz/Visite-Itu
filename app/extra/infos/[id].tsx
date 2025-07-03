@@ -207,7 +207,7 @@ export default function Screen() {
             </PrimaryButton>
           </View>
           <View className="flex flex-row gap-3">
-            <Carousel type={place.tipo} excludeId={place.id} />
+            <Carousel limit={4} type={place.tipo} excludeId={place.id} />
           </View>
         </View>
       </View>
