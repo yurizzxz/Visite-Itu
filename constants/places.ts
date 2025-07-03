@@ -33,6 +33,6 @@ export const places = [
     street: "Rua Exemplo",
     additional: "algo adicional",
     businessHours: "09:00 - 18:00",
-    tipo: "diversao",
+    tipo: "diversão",
   },
 ];

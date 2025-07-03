@@ -1,40 +1,36 @@
+import Carousel from "@/components/carousel";
 import Container from "@/components/container";
-import PlaceCard from "@/components/place-card";
-import Select from "@/components/select";
 import TopBar from "@/components/top-bar";
-import { categorias } from "@/constants/categories";
 import { places } from "@/constants/places";
 import { useRouter } from "expo-router";
-import { useState } from "react";
-import { TouchableOpacity, View } from "react-native";
+import { Text, View } from "react-native";
 
 export default function HomeScreen() {
-  const [categoria, setCategoria] = useState("todos");
+  // const [categoria, setCategoria] = useState("todos");
 
   const router = useRouter();
+
+  const tiposUnicos = Array.from(new Set(places.map((p) => p.tipo)));
 
   return (
     <Container className="px-0 bg">
       <TopBar showFavorites />
       <View className="flex px-4 flex-col gap-4">
-        <Select
+        {/* <Select
           items={categorias}
           onValueChange={setCategoria}
           selectedValue={categoria}
-        />
+        /> */}
 
         <View
-          className="mt-3 flex flex-col gap-4"
+          className="mt-0 flex flex-col gap-4"
           style={{ paddingBottom: 60 }}
         >
-          {places.map((place) => (
-            <TouchableOpacity
-              key={place.id}
-              onPress={() => router.push(`/extra/${place.id}`)}
-              className="flex flex-col gap-3"
-            >
-              <PlaceCard place={place} />
-            </TouchableOpacity>
+          {tiposUnicos.map((tipo) => (
+            <View key={tipo} className="mt-2">
+              <Text className="text-2xl font-bold capitalize mb-0">{tipo}</Text>
+              <Carousel type={tipo} />
+            </View>
           ))}
         </View>
       </View>
