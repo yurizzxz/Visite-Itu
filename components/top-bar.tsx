@@ -3,11 +3,17 @@ import { useRouter } from "expo-router";
 import { Pressable, Text, View } from "react-native";
 import PrimaryButton from "./ui/button";
 
+type TopBarProps = {
+  showBack?: boolean;
+  showFavorites?: boolean;
+  title?: undefined | string;
+};
+
 export default function TopBar({
   showBack = false,
   showFavorites = false,
   title = "Início",
-}) {
+}: TopBarProps) {
   const router = useRouter();
 
   const goToFavorites = () => {
@@ -23,10 +29,10 @@ export default function TopBar({
               <Entypo name="chevron-left" size={28} color="#2563eb" />
             </Pressable>
           )}
-          <Text className="text-2xl font-bold ">{title}</Text>
+          <Text className="text-2xl font-bold capitalize">{title}</Text>
         </View>
         {showFavorites && (
-          <PrimaryButton onPress={goToFavorites}>
+          <PrimaryButton className="gap-2" onPress={goToFavorites}>
             <Entypo name="heart" size={17} color="white" />
             <Text className="text-lg text-white">Ver Favoritos</Text>
           </PrimaryButton>

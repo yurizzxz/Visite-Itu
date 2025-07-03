@@ -81,11 +81,9 @@ export default function Screen() {
             <Entypo name="chevron-left" size={28} color="black" />
           </Pressable>
 
-          <PrimaryButton onPress={goToFavorites}>
+          <PrimaryButton className="gap-2" onPress={goToFavorites}>
             <Entypo name="heart" size={17} color="white" />
-            <Text className="text-lg text-white">
-              Ver Favoritos
-            </Text>
+            <Text className="text-lg text-white">Ver Favoritos</Text>
           </PrimaryButton>
         </View>
 
@@ -195,7 +193,19 @@ export default function Screen() {
         <View className="py-5" />
 
         <View className="pb-8">
-          <Text className="text-2xl font-bold">Itens Relacionados</Text>
+          <View className="flex-row justify-between items-center">
+            <View className="flex flex-col">
+              <Text className="text-2xl font-bold">Itens Relacionados</Text>
+              <View className="bg-blue-500 p-0.5 w-16 mt-0.5 rounded-full"></View>
+            </View>
+            <PrimaryButton
+              className="gap-2"
+              onPress={() => router.push(`/extra/tipos/${place.tipo}`)}
+            >
+              <Text className="text-md text-white">Ver todos</Text>
+              <Entypo name="chevron-right" size={18} color="white" />
+            </PrimaryButton>
+          </View>
           <View className="flex flex-row gap-3">
             <Carousel type={place.tipo} excludeId={place.id} />
           </View>
