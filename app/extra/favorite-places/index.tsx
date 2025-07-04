@@ -28,7 +28,7 @@ export default function FavoritosScreen() {
           favorites.map((place) => (
             <TouchableOpacity
               key={place.id}
-              onPress={() => router.push(`/extra/${place.id}`)}
+              onPress={() => router.push(`../(tabs)/${place.id}`)}
               className=" mb-3"
             >
               <PlaceCard place={place} />

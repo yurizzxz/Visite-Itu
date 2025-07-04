@@ -67,7 +67,7 @@ export default function Screen() {
   };
 
   const goToFavorites = () => {
-    router.push("./favorite-places");
+    router.push("../extra/favorite-places");
   };
 
   return (

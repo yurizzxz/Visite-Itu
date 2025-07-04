@@ -23,7 +23,7 @@ export default function Carousel({ type, excludeId, limit }: CarouselProps) {
         {filteredPlaces.map((place) => (
           <TouchableOpacity
             key={place.id}
-            onPress={() => router.push(`/extra/infos/${place.id}`)}
+            onPress={() => router.push(`./${place.id}`)}
             style={{ marginRight: 12, width: 220 }}
           >
             <PlaceCard place={place} />

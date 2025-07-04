@@ -10,7 +10,7 @@ function getParamAsString(param: string | string[] | undefined): string {
   return Array.isArray(param) ? param[0] : param;
 }
 
-export default function ExtraScreen() {
+export default function IdScreen() {
   const { tipo } = useLocalSearchParams();
   const filteredPlaces = places.filter((p) => p.tipo === tipo);
 
@@ -23,7 +23,7 @@ export default function ExtraScreen() {
       <View className="px-4" style={{ paddingBottom: 60 }}>
         {filteredPlaces.map((place) => (
           <TouchableOpacity
-            onPress={() => router.push(`/extra/${place.id}`)}
+            onPress={() => router.push(`./infos/${place.id}`)}
             className="mb-4"
             key={place.id}
           >
