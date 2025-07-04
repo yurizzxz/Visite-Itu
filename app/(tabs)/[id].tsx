@@ -78,7 +78,7 @@ export default function Screen() {
           style={{ marginTop: statusBarHeight + 14 }}
         >
           <Pressable onPress={() => router.push("/")}>
-            <Entypo name="chevron-left" size={28} color="black" />
+            <Entypo name="chevron-left" size={28} color="#2563eb" />
           </Pressable>
 
           <PrimaryButton className="gap-2" onPress={goToFavorites}>
