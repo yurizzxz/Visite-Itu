@@ -1,5 +1,6 @@
 import Carousel from "@/components/carousel";
 import Container from "@/components/container";
+import SectionCards from "@/components/section-cards";
 import TopBar from "@/components/top-bar";
 import PrimaryButton from "@/components/ui/button";
 import { places } from "@/constants/places";
@@ -17,20 +18,20 @@ export default function HomeScreen() {
   return (
     <Container className="px-0">
       <TopBar showFavorites />
-      <View className="flex  flex-col gap-4">
+      <View className="flex  flex-col gap-4 px-4">
         {/* <Select
           items={categorias}
           onValueChange={setCategoria}
           selectedValue={categoria}
         /> */}
-
+        <SectionCards />
         <View
           className="mt-0 flex flex-col gap-4 "
           style={{ paddingBottom: 60 }}
         >
           {tiposUnicos.map((tipo) => (
             <View className="border-b border-[#E2E2E2]" key={tipo}>
-              <View className="mb-8 mt-3  px-4">
+              <View className="mb-8 mt-3">
                 <View className="flex-row items-center justify-between">
                   <View className="flex flex-col">
                     <Text className="text-2xl font-bold capitalize mb-0">

@@ -32,9 +32,9 @@ export default function TopBar({
           <Text className="text-2xl font-bold capitalize">{title}</Text>
         </View>
         {showFavorites && (
-          <PrimaryButton className="gap-2" onPress={goToFavorites}>
+          <PrimaryButton className="gap-2 h-8" onPress={goToFavorites}>
             <Entypo name="heart" size={17} color="white" />
-            <Text className="text-lg text-white">Ver Favoritos</Text>
+            <Text className="text-md text-white">Ver Favoritos</Text>
           </PrimaryButton>
         )}
       </View>
