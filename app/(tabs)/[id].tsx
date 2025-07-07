@@ -77,7 +77,7 @@ export default function Screen() {
           className="flex-row w-full justify-between absolute z-10  items-center gap-3 px-4"
           style={{ marginTop: statusBarHeight + 14 }}
         >
-          <Pressable onPress={() => router.push("/")}>
+          <Pressable onPress={() => router.back()}>
             <Entypo name="chevron-left" size={28} color="#2563eb" />
           </Pressable>
 

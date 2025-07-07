@@ -1,74 +1,17 @@
 export const roteiros = [
   {
     id: 1,
-    title: "Bate-volta em Itu",
-    duration: "1 dia",
+    title: "Igrejas Históricas – Do Barroco ao Rococó",
+    description: "Em uma caminhada de aproximadamente 800 metros pelo Eixo Histórico, você poderá conhecer obras artísticas, arquitetônicas e históricas únicas, começando pelo Cruzeiro Franciscano, criado por Mestre Tebas e esculpido em arenito e varvito — o único exemplar do tipo no mundo. O roteiro inclui ainda o Santuário Nacional do Sagrado Coração de Jesus, a Matriz Nossa Senhora Candelária — considerada uma das principais expressões do período colonial — e encerra na Igreja de Nossa Senhora do Carmo, com pinturas de autoria do Padre Jesuíno do Monte Carmelo. No percurso, há um Centro de Atendimento ao Turista com estrutura de apoio na Rua Paula Souza, 565.",
+    support: "Centro de Atendimento ao Turista – Rua Paula Souza, 565, Centro (bebedouro, sanitários e fraldário)",
+    map: "https://www.google.com/maps/d/embed?mid=1CvIhq8_uryrXwYDPHNIQ_prl9hgtVs9B&ehbc=2E312F",
     targetAudience: "Todos os públicos",
-    steps: [
-      {
-        title: "Manhã - Centro histórico",
-        description: "Visite a Praça da Matriz, veja o famoso orelhão gigante e entre na Igreja da Candelária."
-      },
-      {
-        title: "Almoço - Bar do Alemão",
-        description: "Almoce no tradicional restaurante Bar do Alemão e experimente o filé à parmegiana."
-      },
-      {
-        title: "Tarde - Parque do Varvito",
-        description: "Explore as formações geológicas únicas no Parque do Varvito."
-      },
-      {
-        title: "Fim do dia - Sorveteria",
-        description: "Finalize com um sorvete artesanal nas sorveterias do centro."
-      }
+    placesId: [
+      1,
+      2,
+      3,
+      4,
+      22  
     ]
   },
-  {
-    id: 2,
-    title: "Final de semana com a família",
-    duration: "2 dias",
-    targetAudience: "Famílias com crianças",
-    steps: [
-      {
-        title: "Dia 1 - Praça dos Exageros",
-        description: "Tire fotos divertidas com objetos gigantes e passeie pelo centro."
-      },
-      {
-        title: "Dia 1 - Fazenda do Chocolate",
-        description: "Conheça animais, faça trilhas leves e experimente chocolates artesanais."
-      },
-      {
-        title: "Dia 2 - Cidade da Criança",
-        description: "Deixe as crianças brincarem em um parque seguro e gratuito."
-      },
-      {
-        title: "Dia 2 - Museu Republicano",
-        description: "Uma visita leve e educativa sobre a história da República no Brasil."
-      }
-    ]
-  },
-  {
-    id: 3,
-    title: "Roteiro romântico",
-    duration: "1 dia",
-    targetAudience: "Casais",
-    steps: [
-      {
-        title: "Caminhada no centro",
-        description: "Explore as ruas antigas de Itu e aproveite o clima tranquilo."
-      },
-      {
-        title: "Almoço aconchegante",
-        description: "Escolha um restaurante intimista como o Empório do Sabor ou Villa Padovan."
-      },
-      {
-        title: "Pôr do sol no Varvito",
-        description: "Assista ao pôr do sol no Parque do Varvito, cercado pela natureza."
-      },
-      {
-        title: "Noite com fondue",
-        description: "Finalize com um jantar romântico com fondue em um restaurante do centro."
-      }
-    ]
-  }
 ];

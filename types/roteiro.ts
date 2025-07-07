@@ -1,10 +1,8 @@
 export type Roteiro = {
   title: string;
-  duration: string;
-  description?: string;
+  description: string;
+  support?: string;
+  map?: string;
   targetAudience: string;
-  steps: {
-    title: string;
-    description: string;
-  }[];
+  placesId: number[];
 };

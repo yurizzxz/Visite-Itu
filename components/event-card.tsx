@@ -24,10 +24,6 @@ export default function EventCard({ evento, className }: EventCardProps) {
             ? `${evento.description.substring(0, 50)}…`
             : evento.description}
         </CardDescription>
-
-        {/* Exemplos extras — descomente se quiser exibir */}
-        {/* <CardDescription>{evento.duration}</CardDescription>
-        <CardDescription>{evento.targetAudience}</CardDescription> */}
       </CardContent>
     </Card>
   );

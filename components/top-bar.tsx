@@ -29,7 +29,7 @@ export default function TopBar({
               <Entypo name="chevron-left" size={28} color="#2563eb" />
             </Pressable>
           )}
-          <Text className="text-2xl font-bold capitalize">{title}</Text>
+          <Text className="text-2xl font-bold capitalize">{title.length > 20 ? `${title.substring(0, 25)}…` : title}</Text>
         </View>
         {showFavorites && (
           <PrimaryButton className="gap-2 h-8" onPress={goToFavorites}>

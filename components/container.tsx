@@ -7,7 +7,7 @@ interface ContainerProps {
   className?: string;
 }
 
-export default function ({ children, className }: ContainerProps) {
+export default function Container ({ children, className }: ContainerProps) {
   const statusBarHeight = Constants.statusBarHeight;
   return (
     <ScrollView

@@ -8,12 +8,6 @@ interface RoteiroCardProps {
 }
 
 export default function RoteiroCard({ roteiro, className }: RoteiroCardProps) {
-
-  const summary =
-    roteiro.description ??
-    roteiro.steps[0]?.description ??
-    "Explore this itinerary!";
-
   return (
     <Card className={className}>
       <Image
@@ -25,12 +19,9 @@ export default function RoteiroCard({ roteiro, className }: RoteiroCardProps) {
       <CardContent className="space-y-1">
         <CardTitle>{roteiro.title}</CardTitle>
         <CardDescription>
-          {summary.length > 50 ? `${summary.substring(0, 50)}…` : summary}
+          {roteiro.description.length > 500 ? `${roteiro.description.substring(0, 500)}…` : roteiro.description}
         </CardDescription>
-
-        {/* Exemplos extras — descomente se quiser exibir */}
-        {/* <CardDescription>{roteiro.duration}</CardDescription>
-        <CardDescription>{roteiro.targetAudience}</CardDescription> */}
+        
       </CardContent>
     </Card>
   );
