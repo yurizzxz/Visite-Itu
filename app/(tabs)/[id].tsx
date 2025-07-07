@@ -88,9 +88,8 @@ export default function Screen() {
         </View>
 
         <Image
-          source={require("@/assets/images/icon.png")}
-          className="w-full"
-          style={{ height: 300 }}
+          source={place.image || require("@/assets/images/icon.png")}
+          style={{ height: 300, resizeMode: "cover", width: "100%" }}
         />
       </View>
 

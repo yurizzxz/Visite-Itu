@@ -12,8 +12,8 @@ export default function EventCard({ evento, className }: EventCardProps) {
   return (
     <Card className={className}>
       <Image
-        source={require("@/assets/images/icon.png")}
-        style={{ width: "100%", height: 120 }}
+        source={evento.image || require("@/assets/images/icon.png")}
+        style={{ width: "100%", height: 220 }}
         resizeMode="cover"
       />
 

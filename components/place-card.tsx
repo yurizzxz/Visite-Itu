@@ -11,8 +11,8 @@ export default function PlaceCard({ place, className }: PlaceCardProps) {
   return (
     <Card className={className}>
       <Image
-        source={require("@/assets/images/icon.png")}
-        style={{ width: "100%", height: 120 }}
+        source={place.image || require("@/assets/images/icon.png")}
+        style={{ width: "100%", height: 220 }}
         resizeMode="cover"
       />
 

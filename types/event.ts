@@ -3,5 +3,6 @@ export type Evento = {
   date: string;       
   location: string;
   description: string;
+  image: string;
   link: string;
 };

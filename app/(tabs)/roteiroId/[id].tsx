@@ -2,10 +2,10 @@ import Container from "@/components/container";
 import PlaceMention from "@/components/place-mention";
 import { roteiros } from "@/constants/roteiros";
 import Entypo from "@expo/vector-icons/Entypo";
-import { router, useLocalSearchParams } from "expo-router";
-import { Text, View, Image, Pressable, LayoutAnimation } from "react-native";
 import Constants from "expo-constants";
+import { router, useLocalSearchParams } from "expo-router";
 import { useState } from "react";
+import { Image, LayoutAnimation, Pressable, Text, View } from "react-native";
 
 export default function RoteiroDetalhes() {
   const { id } = useLocalSearchParams();
@@ -38,9 +38,8 @@ export default function RoteiroDetalhes() {
         </View>
 
         <Image
-          source={require("@/assets/images/icon.png")}
-          className="w-full"
-          style={{ height: 300 }}
+          source={roteiro.image}  
+          style={{ height: 300, resizeMode: "cover", width: "100%" }}
         />
       </View>
 

@@ -11,15 +11,15 @@ export default function RoteiroCard({ roteiro, className }: RoteiroCardProps) {
   return (
     <Card className={className}>
       <Image
-        source={require("@/assets/images/icon.png")}
-        style={{ width: "100%", height: 120 }}
+        source={roteiro.image || require("@/assets/images/icon.png")}  
+        style={{ width: "100%", height: 180 }}
         resizeMode="cover"
       />
 
       <CardContent className="space-y-1">
         <CardTitle>{roteiro.title}</CardTitle>
         <CardDescription>
-          {roteiro.description.length > 500 ? `${roteiro.description.substring(0, 500)}…` : roteiro.description}
+          {roteiro.description.length > 150 ? `${roteiro.description.substring(0, 150)}…` : roteiro.description}
         </CardDescription>
         
       </CardContent>

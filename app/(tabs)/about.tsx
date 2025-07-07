@@ -1,50 +1,42 @@
 import Container from "@/components/container";
 import TopBar from "@/components/top-bar";
-import { ScrollView, Text, View } from "react-native";
+import React from "react";
+import { Image, ScrollView, Text, View } from "react-native";
 
 export default function AboutScreen() {
   return (
     <Container>
       <TopBar title="Sobre" showBack showFavorites />
 
-      <ScrollView className="px-4 space-y-4">
-
-
-        <Text className="text-md  ">
-          Itu é uma cidade localizada no interior do estado de São Paulo, famosa
-          pelo seu charme histórico e pelas atrações turísticas com objetos
-          gigantes, que renderam à cidade o apelido de “Cidade dos Exageros”.
+      <ScrollView contentContainerStyle={{ paddingHorizontal: 16, paddingVertical: 0 }}>
+        <Text className="text-base leading-6 text-gray-800 mb-4">
+          Itu é uma cidade localizada no interior do estado de São Paulo, famosa pelo seu charme histórico e pelas atrações turísticas com objetos gigantes, que renderam à cidade o apelido de “Cidade dos Exageros”.
         </Text>
-{/* 
+
         <Image
-          source={require("@/assets/itu-telefone-gigante.jpg")}
-          className="w-full h-52 rounded-lg"
-          resizeMode="cover"
-        /> */}
+          source={require("@/assets/images/roteiro1.jpg")}
+          style={{ width: "100%", height: 250 }}
+          accessible={true}
+          accessibilityLabel="Imagem representativa da cidade de Itu"
+        />
 
-        <Text className="text-xl font-bold mt-2">Curiosidades:</Text>
+        <Text className="text-xl font-bold mb-1 mt-4 text-gray-900">Curiosidades:</Text>
 
-        <View className="space-y-2">
-          <Text className="text-md">• Fundada em 1610</Text>
-          <Text className="text-md">• Berço da Proclamação da República</Text>
-          <Text className="text-md">
-            • Atrações famosas como o semáforo, o telefone e o orelhão gigantes
-          </Text>
-          <Text className="text-md">
-            • Possui o Parque do Varvito, com formações geológicas únicas
-          </Text>
-          <Text className="text-md">
-            • Muito conhecida pelo turismo rural e gastronômico
-          </Text>
+        <View className="mb-6 space-y-2">
+          <Text className="text-base leading-6 text-gray-700">• Fundada em 1610</Text>
+          <Text className="text-base leading-6 text-gray-700">• Berço da Proclamação da República</Text>
+          <Text className="text-base leading-6 text-gray-700">• Atrações famosas como o semáforo, o telefone e o orelhão gigantes</Text>
+          <Text className="text-base leading-6 text-gray-700">• Possui o Parque do Varvito, com formações geológicas únicas</Text>
+          <Text className="text-base leading-6 text-gray-700">• Muito conhecida pelo turismo rural e gastronômico</Text>
         </View>
 
-        <Text className="text-lg font-bold mt-4">Dicas de passeio:</Text>
+        <Text className="text-lg font-bold mb-1 text-gray-900">Dicas de passeio:</Text>
 
-        <View className="space-y-2 mb-6">
-          <Text className="text-md">• Visite a Praça dos Exageros</Text>
-          <Text className="text-md">• Almoce no Bar do Alemão</Text>
-          <Text className="text-md">• Curta um dia na Fazenda do Chocolate</Text>
-          <Text className="text-md">• Conheça o Museu Republicano de Itu</Text>
+        <View className="mb-10 space-y-2">
+          <Text className="text-base leading-6 text-gray-700">• Visite a Praça dos Exageros</Text>
+          <Text className="text-base leading-6 text-gray-700">• Almoce no Bar do Alemão</Text>
+          <Text className="text-base leading-6 text-gray-700">• Curta um dia na Fazenda do Chocolate</Text>
+          <Text className="text-base leading-6 text-gray-700">• Conheça o Museu Republicano de Itu</Text>
         </View>
       </ScrollView>
     </Container>

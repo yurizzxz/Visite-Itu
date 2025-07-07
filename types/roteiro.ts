@@ -5,4 +5,5 @@ export type Roteiro = {
   map?: string;
   targetAudience: string;
   placesId: number[];
+  image: string;
 };
